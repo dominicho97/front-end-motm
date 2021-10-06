@@ -28,6 +28,7 @@
     --global-color-alpha-x-dark: #1B4186;
     --global-color-alpha-transparent: #3385ffbf;
     --global-color-alpha-x-transparent: #3385ff4d;
+    --global-color-alpha-yellow:#F0C61D ;
 
     --global-color-neutral-xxxx-light: #F5F6FA;
     --global-color-neutral-xxx-light: #E2E3E7;
@@ -123,7 +124,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
 
     /*scrollbar styling*/
-    scrollbar-color: #F0C61D white;
+    scrollbar-color: var(--global-color-alpha-yellow) white;
     scrollbar-width:thick;
     
   
@@ -136,11 +137,13 @@ html {
     width: 8px;
     height: 8px;
     background-color:  rgb(29,33,88);
+    border: 10px solid transparent;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #F0C61D;
+    background: var(--global-color-alpha-yellow);
     border-radius: 5px;
+    border: 10px solid transparent;
   }
 
 *,
