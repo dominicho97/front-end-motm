@@ -20,6 +20,9 @@
     src: url("../fonts/Inter-Bold.woff2") format("woff2")
 }
 
+
+
+
 :root {
     /* Global colors */
     --global-color-alpha-light: #4F95FF;
