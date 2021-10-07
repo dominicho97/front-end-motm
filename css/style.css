@@ -808,7 +808,7 @@ a:focus {
     display: inline-block;
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
     font-weight: 600;
 
@@ -822,16 +822,27 @@ a:focus {
 .c-link-cta:visited,
 .c-link-cta:active {
     color: #fff;
+    
 }
 
 .c-link-cta:hover,
 .c-link-cta:focus {
     color: #fff;
     background: #4F95FF;
+    
+   
+}
+
+
+
+
+.c-link-cta:focus::after{
+    transform: scale(1)
 }
 
 .c-link-cta:active {
     background-color: #3385FF;
+    transform:scale(1)
 }
 
 .c-link-cta--lg {
