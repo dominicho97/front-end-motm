@@ -3,21 +3,21 @@
 \*------------------------------------*/
 
 @font-face {
-    font-family: "Inter Web";
+    font-family: "Titillium Web";
     font-weight: 400;
-    src: url("../fonts/Inter-Regular.woff2") format("woff2")
+    src: url("../fonts/TitilliumWeb-Light.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: "Inter Web";
+    font-family: "Titillium";
     font-weight: 600;
-    src: url("../fonts/Inter-Medium.woff2") format("woff2")
+    src: url("../fonts/TitilliumWeb-Regular.ttf") format("ttf")
 }
 
 @font-face {
-    font-family: "Inter Web";
+    font-family: "Titillium Web";
     font-weight: 700;
-    src: url("../fonts/Inter-Bold.woff2") format("woff2")
+    src: url("../fonts/TitilliumWeb-Bold.ttf") format("ttf")
 }
 
 
@@ -120,7 +120,7 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Inter Web", Helvetica, arial, sans-serif;
+    font-family: "Titillium Web", Helvetica, arial, sans-serif;
     color: var(--global-color-neutral-xxxx-light);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -305,7 +305,21 @@ a:active {
 
 a:hover,
 a:focus {
-    color: #4F95FF;
+    transition: scale(5);
+    border-bottom: 2px solid #fc0;
+    box-shadow: inset 0 0 0 #fc0;
+}
+
+.text_highlight{
+    border-bottom: 2px solid #fc0;
+    box-shadow: inset 0 0 0 #fc0;
+    transition: box-shadow 0.1s linear;
+}
+
+.text_highlight:hover{
+    box-shadow: inset 0 -2em 0 #fc0;
+    color: black;
+    font-weight: bold;
 }
 
 /*------------------------------------*\
@@ -665,16 +679,22 @@ a:focus {
     Main navigation of the site
 */
 
+
 .c-nav {
     font-size: 14px;
     line-height: 24px;
 }
+
+
+
 
 .c-nav__link {
     text-decoration: none;
     font-weight: 600;
     display: block;
     padding: 8px 0;
+
+    font-weight: bold;
 }
 
 .c-nav__link,
@@ -685,8 +705,15 @@ a:focus {
 
 .c-nav__link:hover,
 .c-nav__link:focus {
-    color: #3385FF;
+    color: var(--global-color-alpha-yellow);
+
+  
 }
+
+
+
+
+
 
 @media (min-width: 992px) {
     .c-nav__list {
