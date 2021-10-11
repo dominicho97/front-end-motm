@@ -631,6 +631,185 @@ a:focus {
 }
 
 /*
+    Component: Card
+    ---
+    Card with box shadow
+*/
+
+.c-card {
+    --card-borderRadius: var(--global-borderRadius);
+    background-color: var(--card-backgroundColor, White);
+    margin-bottom: var(--global-whitespace);
+    border-radius: var(--card-borderRadius, var(--global-borderRadius));
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
+    overflow: hidden;
+}
+
+/* Add padding to child for more flexibility */
+.c-card__body,
+.c-card__footer {
+    padding: var(--global-whitespace);
+}
+
+.c-card__footer {
+    text-align: center;
+    border-top: var(--global-borderWidth) solid var(--card__footer-borderColor, var(--global-color-neutral-xxx-light));
+}
+
+.c-card__title {
+    text-align: center;
+    font-size: 18px;
+    line-height: calc(var(--global-baseline) * 3);
+    font-weight: 600;
+}
+
+/* This allows c-card__body and __footer to have equal padding everywhere */
+
+.c-card__body > *:last-child,
+.c-card__footer > *:last-child,
+.c-card__body > *:last-child > *:last-child,
+.c-card__footer > *:last-child > *:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 27em) {
+    .c-card__body {
+        padding: var(--global-whitespace-xl);
+    }
+
+    .c-card__title {
+        margin-bottom: var(--global-whitespace-xl);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .c-card {
+        --card-backgroundColor: var(--global-color-neutral-xxx-dark);
+        --card__footer-borderColor: var(--global-color-neutral-xxxx-dark);
+    }
+}
+
+/*
+    Component: Forms
+    ---
+    Everything form related here
+*/
+
+.c-form-field {
+    position: relative;
+}
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
+/*
+    Component: Input
+    ---
+    Class to put on all input="text" like form inputs
+*/
+
+.c-input {
+    --input-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: var(--input-borderRadius, var(--global-borderRadius));
+    border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
+    background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
+    color: var(--global-input-color);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: calc(var(--global-baseline) * 3);
+    padding: calc(var(--global-baseline) * 1.5 - var(--global-borderWidth)) var(--global-whitespace-md);
+    outline: none;
+    transition: var(--input-transition);
+}
+
+.c-input:hover {
+    border-color: var(--input-hover-borderColor, var(--global-input-hover-borderColor));
+}
+
+.c-input:focus,
+.c-input:active {
+    border-color: var(--input-focus-borderColor, var(--global-input-focus-borderColor));
+    box-shadow: var(--global-input-focus-boxShadowSpread) var(--input-focus-boxShadowColor, var(--global-input-focus-boxShadowColor));
+}
+
+/*
+Input password with toggle checkbox on top of it needs
+more padding on the right to avoid overlap
+*/
+
+.c-input--password-with-toggle {
+    padding-right: 52px;
+}
+
+/* input password with floating label */
+/* 
+.c-input--with-floating-label:focus {
+    box-shadow: 0 0 0 1px var(--global-input-focus-borderColor);
+} */
+
+/* option input for checkboxes and radio buttons */
+
+.c-option {
+    margin-right: var(--global-whitespace-sm);
+}
+
+/*
+    Component: Label
+    ---
+    Class to put on all form labels
+*/
+
+.c-label {
+    margin-bottom: 0;
+    font-size: 14px;
+    padding-bottom: var(--global-whitespace-sm);    
+    line-height: calc(var(--global-baseline) * 2);
+    color: var(--label-color, var(--global-label-color));
+}
+
+.c-label--option {
+    padding-bottom: 0;
+}
+
+.c-label__error-message {
+    font-weight: 600;
+	float: right;
+	display: none;
+}
+
+.c-label__error-message.is-visible {
+	display: block;
+}
+
+.c-label--floating {
+    position: absolute;
+    top: calc(var(--global-baseline) * 1.5);
+    left: var(--global-whitespace-sm);
+    padding: var(--global-whitespace-xs)  var(--global-whitespace-sm);
+    background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
+    transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
+    z-index: 1;
+    border-radius: var(--global-borderRadius);
+}
+
+.is-floating,
+.c-form-field:focus-within .c-label--floating {
+    transform: translateY(calc(var(--global-baseline) * -3))
+}
+
+@media (prefers-color-scheme: dark) {
+    /* .c-label--floating {
+        --label--floating-backgroundColor: transparent;
+    } */
+}
+
+
+/*
     Component: header
     ---
     Main header of the website
