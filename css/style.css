@@ -354,6 +354,17 @@ a:focus {
     
 
 }
+.o-row--neutral-xx-light {
+    color: #fff;
+    
+    /*background: url(/img/motm3.png);
+    background-repeat: no-repeat;
+    background: linear-gradient(0deg, #00000088 100% );*/
+    background: var(--global-color-alpha-yellow)
+    
+    
+
+}
 
 /* intro needs a larger z-index to pull the image over the next row */
 
@@ -651,6 +662,7 @@ a:focus {
 .c-card__body,
 .c-card__footer {
     padding: var(--global-whitespace);
+    background: var(--global-color-neutral-xxxxx-light);
 }
 
 .c-card__footer {
