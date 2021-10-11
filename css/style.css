@@ -643,6 +643,8 @@ a:focus {
     border-radius: var(--card-borderRadius, var(--global-borderRadius));
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.05), 0 2px 4px rgba(0,0,0,.075);
     overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* Add padding to child for more flexibility */
@@ -714,7 +716,7 @@ a:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 75%;
     border-radius: var(--input-borderRadius, var(--global-borderRadius));
     border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
     background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
