@@ -10,7 +10,22 @@
     <link rel="shortcut icon" type="image/jpg" href="/img/favicon/favicon.ico" />
     <link rel="shortcut icon" type="image/jpg" href="/img/favicon/favicon-16x16.png" />
     <link rel="shortcut icon" type="image/jpg" href="/img/favicon/favicon-32x32.png" />
+
+    <!--<script defer src="./script/validation.js"></script>-->
+    <script defer src="./script/api.js"></script>
     <!--<link rel="stylesheet" href="css/screen.css">-->
+
+    <!--LeafletJS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+
+
+
     <title>Man on the moon </title>
 </head>
 
@@ -110,45 +125,90 @@
                         </div>
                     </div>
                 </article>
+
+
+                <article class="o-section o-section--xl o-row--neutral-xxy-dark ">
+                    <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center">
+                        <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
+                            <figure class="u-mb-lg">
+                                <picture>
+                                    <source srcset="img/spaceship.svg" media="(min-width: 992px)">
+                                    <source srcset="img/spaceship.svg" media="(min-width: 576px)">
+                                    <img src="img/spaceship.svg" alt="Spaceship image">
+                                </picture>
+                            </figure>
+                        </div>
+                        <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
+                            <div class="u-max-width-sm">
+                                <h2>
+                                    Track the ISS
+                                </h2>
+                                <p class="c-lead c-lead--md u-color-neutral-base">
+                                    Using the ISS API you can now check the real-time location of the International
+                                    Space Station in space! <br>
+                                <h2>
+                                    <p>latitude: <span id="lat"></span></p>
+                                    <p>longitude: <span id="long"></span></p>
+                                </h2>
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+                <div id="issMap"></div>
+
+                <!--end of grid-->
             </div>
+
+
+
+
+
         </section>
 
 
 
 
-        <article class="o-section o-section--xl o-row--neutral-xx-light ">
+
+
+
+
+        <!---form commented
+        <article class="o-section o-section--xxl o-row--neutral-xx-light ">
             <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center">
                 <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
 
 
-                    <!--FORM-->
-                    <form class="c-card" action="#">
-                        <div class="c-card__body">
-                            <h2 class="c-card__title">
-                                Subscribe to our email list
-                            </h2>
+        
+        <form class="c-card" action="#">
+            <div class="c-card__body">
+                <h2 class="c-card__title">
+                    Subscribe to our email list
+                </h2>
 
-                            <div class="o-section">
-                                <h5 class="">
-                                    Floating labels
-                                </h5>
-                                <p class="c-form-field js-email-field">
-                                    <label class="c-label c-label--floating js-floating-label" for="username">
-                                        Email
-                                    </label>
-                                    <input class="c-input c-input--with-floating-label js-floating-input" type="email"
-                                        name="username" id="username" required>
-                                <p class="js-error-message"></p>
-                                </p>
-                            </div>
+                <div class="o-section">
 
-
-                            <button class="c-button" type="submit" value="submit" id=eventButton>
-                                Subscribe to our email list
-                            </button>
-                        </div>
+                    <p class="c-form-field js-email-field">
+                        <label class="c-label c-label--floating js-floating-label" for="username">
+                            Email
+                        </label>
+                        <input class="c-input c-input--with-floating-label js-floating-input" type="email"
+                            name="username" id="username" required>
+                    <p class="js-error-message"></p>
+                    </p>
                 </div>
+
+
+                <button class="c-button" type="submit" value="submit" id=eventButton>
+                    Subscribe to email list
+                </button>
             </div>
+    </div>
+    </div>
 
     </div>
     </article>
@@ -157,7 +217,10 @@
 
 
 
-    </div>
+    </div>-->
+
+
+
 
 
 

@@ -172,7 +172,7 @@ html {
 
 .grid1{
     display: grid;
-    grid-template-rows: 1fr ;
+    grid-template-rows: 1fr  ;
     /*background: url(/img/motm3.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -185,11 +185,10 @@ html {
     margin-top: 80px;
     
 
+}
 
-    
-    
- 
-   
+#issMap{
+    height: 180px;
 }
 
 
@@ -354,13 +353,17 @@ a:focus {
     
 
 }
+
+
+
+
 .o-row--neutral-xx-light {
     color: #fff;
     
     /*background: url(/img/motm3.png);
     background-repeat: no-repeat;
     background: linear-gradient(0deg, #00000088 100% );*/
-    background: var(--global-color-alpha-yellow)
+    background: rgb(29,33,88)
     
     
 
