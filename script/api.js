@@ -36,7 +36,7 @@ customHeaders.append('Accept', 'application/json');
 
 try {
 
-
+    let firstTimeView = true
 
     //async de API URL Fetchen
     async function getISS() {
@@ -53,6 +53,10 @@ try {
         //L.marker([roundedLatitude, roundedLongitude]).addTo(mymap);
         marker.setLatLng([roundedLatitude, roundedLongitude])
 
+        if (firstTimeView) {
+            mymap.setView([roundedLatitude, roundedLongitude], 2)
+            firstTimeView = false
+        }
 
         document.getElementById("lat").textContent = roundedLatitude
         document.getElementById("long").textContent = roundedLongitude
@@ -75,6 +79,11 @@ try {
 
     //functies hier oproepen! (want binnen try/catch) /function call
     getISS();
+
+    setTimeout(
+        setInterval(getISS, 1000)
+    )
+
 
 
 }
