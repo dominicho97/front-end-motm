@@ -5,9 +5,8 @@
 //make map and tiles
 const mymap = L.map('issMap').setView([0, 0], 1);
 
-const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors';
-const marker = L.marker([0, 0], { icon: markerIcon }).addTo(mymap);
 
+const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 tiles = L.tileLayer((tileUrl), { attribution })
 tiles.addTo(mymap)
@@ -21,9 +20,13 @@ var markerIcon = L.icon({
 
 });
 
+const marker = L.marker([0, 0], { icon: markerIcon }).addTo(mymap);
 
 
 
+
+
+// API URL/ENDPOINT
 const api_url = 'https://api.wheretheiss.at/v1/satellites/25544'
 
 
@@ -63,13 +66,14 @@ try {
 
     }
 
+    //DOMContentLoaded
     document.addEventListener("DOMContentLoaded", function () {
         //check of de pagina juist laadt
         console.log("DOM loaded")
     })
 
 
-    //functies hier oproepen! (want binnen try/catch)
+    //functies hier oproepen! (want binnen try/catch) /function call
     getISS();
 
 
@@ -79,10 +83,3 @@ catch (error) {
 }
 
 
-/*
-document.addEventListener("DOMContentLoaded", function () {
-    //check of de pagina juist laadt
-    console.log("DOM loaded");
-
-    getDOMElements()
-})*/
