@@ -188,7 +188,8 @@ html {
 }
 
 #issMap{
-    height: 180px;
+    height: 300px;
+    margin-bottom: var(--global-whitespace-lg);
 }
 
 
