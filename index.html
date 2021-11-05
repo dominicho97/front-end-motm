@@ -22,6 +22,8 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
+    <!--ScrollReveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
 
 
@@ -131,7 +133,7 @@
                     <div class="o-layout o-layout--gutter-xl o-layout--justify-center o-layout--align-center">
                         <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
                             <figure class="u-mb-lg">
-                                <picture>
+                                <picture class="ISS-image">
                                     <source srcset="img/spaceship.svg" media="(min-width: 992px)">
                                     <source srcset="img/spaceship.svg" media="(min-width: 576px)">
                                     <img src="img/spaceship.svg" alt="Spaceship image">
@@ -139,7 +141,7 @@
                             </figure>
                         </div>
                         <div class="o-layout__item u-2-of-3-bp2 u-1-of-2-bp3">
-                            <div class="u-max-width-sm">
+                            <div class="u-max-width-sm ISS-text">
                                 <h2>
                                     Track the ISS
                                 </h2>
@@ -159,7 +161,7 @@
                 </article>
 
 
-                <div id="issMap"></div>
+                <div id="issMap" class="issMap"></div>
 
                 <!--end of grid-->
             </div>

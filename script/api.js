@@ -36,6 +36,17 @@ customHeaders.append('Accept', 'application/json');
 
 try {
 
+    //Scroll animation
+    function scrollAnimation() {
+        ScrollReveal({ reset: true });
+
+        ScrollReveal().reveal('.ISS-image', { delay: 250 });
+        ScrollReveal().reveal('.ISS-text', { delay: 250 });
+        ScrollReveal().reveal('.issMap', { delay: 250 });
+    }
+
+
+
     let firstTimeView = true
 
     //async de API URL Fetchen
@@ -78,12 +89,14 @@ try {
 
 
     //functies hier oproepen! (want binnen try/catch) /function call
+
     getISS();
 
     setTimeout(
         setInterval(getISS, 3000) //be carefull for too many requests in a short period
     )
 
+    scrollAnimation();
 
 
 }
