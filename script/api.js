@@ -81,7 +81,7 @@ try {
     getISS();
 
     setTimeout(
-        setInterval(getISS, 1000)
+        setInterval(getISS, 3000) //be carefull for too many requests in a short period
     )
 
 
