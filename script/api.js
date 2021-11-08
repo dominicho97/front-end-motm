@@ -36,6 +36,69 @@ customHeaders.append('Accept', 'application/json');
 
 try {
 
+    //Chart
+    const drawChart = function (labels, data) {
+        let ctx = document.querySelector(".js-chart-temperature").getContext("2d");
+
+        let config = {
+            type: "line", //geeft de soort grafiek
+            data: {
+                labels: labels, //al de labels die worden getoond aan de onderkant vd grafiek
+                datasets: [
+                    {
+                        label: "Velocity(in 1000)", //label vanboven
+                        backgroundColor: "#FFFFFF", // styling
+                        borderColor: "#2969FF", // styling
+                        data: data, // we voegen de data toe om de grafiek te vormen
+                        fill: "red" //styling
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: "Chart.js Line Chart"
+                },
+                tooltips: {
+                    mode: "index",
+                    intersect: true
+                },
+                hover: {
+                    mode: "nearest",
+                    intersect: true
+                },
+                scale: {
+                    xAxes: [
+                        {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Hoogte"
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Tijd"
+                            }
+                        }
+                    ]
+                }
+            }
+        };
+        if (window.myChart) window.myChart.destroy();
+        window.myChart = new Chart(ctx, config);
+
+    };
+
+
+
+
+
     //Scroll animation
     function scrollAnimation() {
         ScrollReveal({ reset: true });
@@ -69,17 +132,39 @@ try {
             firstTimeView = false
         }
 
+        //Fill API data to HTML
         document.getElementById("lat").textContent = roundedLatitude
         document.getElementById("long").textContent = roundedLongitude
 
 
+        //CHART DATA
+        console.log(data.velocity)
+        console.log(data.daynum)
 
+
+        //round numbers to 2 decimals
+        let roundedVelocity = Math.round((data.velocity + Number.EPSILON) * 100) / 100000;
+        let roundedDaynum = Math.round((data.daynum + Number.EPSILON) * 100) / 100000000;
+
+
+        let velocity_label = []
+        let daynum_label = []
+
+        //push data to Chart
+        velocity_label.push(roundedVelocity)
+        daynum_label.push(roundedDaynum)
+        drawChart(daynum_label, velocity_label)
 
 
 
 
 
     }
+
+
+
+
+
 
     //DOMContentLoaded
     document.addEventListener("DOMContentLoaded", function () {
@@ -88,13 +173,20 @@ try {
     })
 
 
+
+
+
     //functies hier oproepen! (want binnen try/catch) /function call
+
+
 
     getISS();
 
     setTimeout(
         setInterval(getISS, 3000) //be carefull for too many requests in a short period
     )
+
+
 
     scrollAnimation();
 
